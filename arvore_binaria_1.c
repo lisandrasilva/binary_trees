@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct nodo {
-    int valor;
-    struct nodo *esq, *dir;
-} *ABin;
+#include "arvore_binaria_1.h"
 
 ABin newABin (int r, ABin e, ABin d)
 {
@@ -14,6 +10,17 @@ ABin newABin (int r, ABin e, ABin d)
 	a->esq = e; a->dir = d;
 
 	return a;
+}
+
+int size (ABin a)
+{
+int r = 0;
+
+if (a!=NULL)
+{
+	r = 1 + size(a->esq) + size(a->dir);
+}
+return r;
 }
 
 int toArray (ABin a, int v[],int N)
@@ -32,18 +39,6 @@ if (a != NULL && N > 0)
 
 	r += toArray(a->dir,v+r,N-r);//escreve os elementos da direita
 }
-return r;
-}
-
-int size (ABin a)
-{
-int r = 0;
-
-if (a!=NULL)
-{
-	r = 1 + size(a->esq) + size(a->dir);
-}
-
 return r;
 }
 
@@ -79,27 +74,44 @@ int r = 0; // ainda não encontrei
 if (a == NULL);
 else if (a->valor == x) r = 1;
      else if (a->valor > x)
-	     r = procura(x,a->esq);
+	     r = procura_recursiva(x,a->esq);
      	  else 
-	      r = procura(x,a->dir);// a->valor < x
+	      r = procura_recursiva(x,a->dir);// a->valor < x
 		
 return r;
 }
 
-/* Como no caso na "procura" não precisamos voltar atrás na árvore,nem ir para ver coisas nos 2 lados dela ao mesmo tempo (o percurso de tal algorítmo é único) ela é um dos poucos casos em que é razoável (compensa mais) fazer uma versão iterativa (pois a anterior era recursiva). Sendo assim uma função ainda mais eficiente*/
+/* Como no caso na "procura" não precisamos voltar atrás na árvore,nem ir para ver coisas nos 2 lados dela ao mesmo tempo (o percurso de tal algorítmo é único), nem precisamos percorrer a árvore toda (por se tratar de uma
+árvore de procura)  ela é um dos poucos casos em que é razoável (compensa mais)
+fazer uma versão iterativa (posa anterior era recursiva). Sendo assim uma
+função ainda mais eficiente*/
 
 int procura_iterativa (int x, ABin a)
 {
-inr r = 0;
-
-while (a != NULL && !r)
+int r = 0;
+while (a != NULL && a->valor != x)
 {
-if (a->valor == x) r = 1;
-else if  (a->valor > x) a = a->esq;
+     if  (a->valor > x) a = a->esq;
      else a = a->dir;
 }
 
-return r;
+return (a != NULL); // se a for NULL quer dizer que não encontrei o elemento e a desigualdade será falsa, devolvendo 0
+}
+
+/*Obs: nas árvores binárias de procura não preciso me preocupar em conectar nada na hora de inserir algo. Basta eu ir descendo por ela conforme o item for maior ou menor. No fundo sempre vou inseir algo o mais embaixo de tudo , pois senão poderia quebrar o padrão das árvores de procura*/
+
+ABin insere (ABin a, int x)
+{
+
+if (!a) // !a será True se a for NULL
+	a = newABin (x,NULL,NULL);
+else if (a->valor > x)
+	a->esq = insere(a->esq,x);
+     else 
+	a->dir = insere(a->dir,x);
+
+
+return a;
 }
 
 /*Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna o nodo no qual está o 
@@ -164,15 +176,3 @@ else if (a->dir == NULL)
 return a;
 }
 
-
-int main()
-{
-
-int a[10] = {5,10,15,20,25,30,35,40,45,50};
-
-ABin arv1 = fromArray (a,5);
-
-ABin arv2 = removeMaior (&arv1);
-
-return 0;
-}

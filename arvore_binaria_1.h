@@ -6,6 +6,15 @@ Funções de manuseamento de árvores binárias (algumas de procura)*/
 #define ARVORE_BINARIA_H
 
 /**
+\brief estrutura de uma árvore binária 
+*/
+
+typedef struct nodo {
+    int valor;
+    struct nodo *esq, *dir;
+} *ABin;
+
+/**
 \brief Dada 2 árvores binárias, cria uma nova árvore sendo
 o valor da nova raíz aquele que foi dado como argumento e 
 cada nodo (esq e dir) uma das árvores dadas como argumento.
@@ -61,7 +70,7 @@ ABin fromArray (int v[],int N);
 @param a árvore em que vamos  procurar o elemento x
 */
 
-int procura_recursiva(int x, ABin a)
+int procura_recursiva(int x, ABin a);
 
 /**
 \brief Procura o elemento "x" na árvore de Procura "a". Devolve 1 se "x" existe na árvore "a".Obs: algorítmo iterativo.
@@ -69,9 +78,21 @@ int procura_recursiva(int x, ABin a)
 @param a árvore em que vamos  procurar o elemento x
 */
 
-int procura_iterativa(int x, ABin a)
+int procura_iterativa(int x, ABin a);
+
+/**
+\brief Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura.
+Devolve uma árvore de procura com os elementos de "a" e "x".
+@param a árvore que vamos inserir um elemento 
+@param x elemento a ser inserido na árvore a
+*/
+
+ABin insere (ABin a, int x);
+
 
 ABin removeMaior (ABin *sitio);
 
 // em projeto
-ABin removeRaiz (ABin a)
+ABin removeRaiz (ABin a);
+
+#endif
