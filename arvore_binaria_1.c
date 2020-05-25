@@ -88,7 +88,6 @@ função ainda mais eficiente*/
 
 int procura_iterativa (int x, ABin a)
 {
-int r = 0;
 while (a != NULL && a->valor != x)
 {
      if  (a->valor > x) a = a->esq;
@@ -100,31 +99,144 @@ return (a != NULL); // se a for NULL quer dizer que não encontrei o elemento e 
 
 /*Obs: nas árvores binárias de procura não preciso me preocupar em conectar nada na hora de inserir algo. Basta eu ir descendo por ela conforme o item for maior ou menor. No fundo sempre vou inseir algo o mais embaixo de tudo , pois senão poderia quebrar o padrão das árvores de procura*/
 
-ABin insere (ABin a, int x)
+ABin insere_recursiva (ABin a, int x)
 {
 
 if (!a) // !a será True se a for NULL
 	a = newABin (x,NULL,NULL);
 else if (a->valor > x)
-	a->esq = insere(a->esq,x);
+	a->esq = insere_recursiva(a->esq,x);
      else 
-	a->dir = insere(a->dir,x);
+	a->dir = insere_recursiva(a->dir,x);
+        
+return a;
+}
 
+ABin insere_iterativa (ABin a,int x)
+{
+ABin ant,novo,pt = a;
+
+novo  = newABin (x,NULL,NULL);
+
+while (pt)
+{
+	ant = pt; // Sem isso, sairia do ciclo com a = NULL e se eu modificasse "a" não mudaria
+	//nada a nivel da árvore, pois ele é uma cópia mas acima de tudo o que estava a apontar para
+	// "a" continua a apontar para NULL.
+	if (pt->valor > x)
+		pt = pt->esq;
+	else
+		pt = pt->dir;
+} 
+
+if (!a) // se a árvore original for vazia 
+	a = novo;
+else 
+{
+	if (ant->valor > x)
+		ant->esq = novo;
+	else 
+		ant->dir = novo;
+}
 
 return a;
 }
 
-/*Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna o nodo no qual está o 
-maior elemento*/
-ABin removeMaior (ABin *sitio)
+/*Aqui eu consigo mudar exatamente o local que está NULL, ou seja, o local que está um suposto endereço de árvore binária 
+(um endereço no qual há um "* ABin" ). Não estou a lidar com o valor NULL como variável, e sim com o endereço em que ele 
+está, endereço o qual é aquele representado por "&(a->esq)" por exemplo . Assim mudando o conteúdo desse pointer, mudarei 
+o conteúdo no qual está alocado no endereço &(e->esq), fazendo realmente mudança na árvore. Sem me preocupar em guardar o 
+anterior ou retornar algo. Uma coisa é ter como várivel numa função auxiliar o endereço de uma árvore binária que foi passada
+ como argumento. Se esta variável for "a" por exemplo, ao igualar "a" a algo, estarei a mudar a variável em si e mais nada 
+ a nivel de árvore. Aqui só fazendo a->esq por exemplo para mudar algo. Mas se tiver como variável &a, por exemplo representado 
+ pela variável "b", ao fazer *b e igualar a algo estarei a mudar realmente a árvore, pois estarei acessando o conteúdo de 
+ "b". Como b é uma coṕia do endereço em que está o endereço de uma árvore, ao fazer *b estarei deixando de modificar a copia 
+ (variavel local) e estarei acessando o conteúdo do endereço que b armazena, e nesse caso tal conteúdo é o endereço da 
+ árvore binária  e, ao mudar tal conteúdo, estarei mudando o conteúdo de algo que está alocado no endereço dado como argumento 
+ que é o endereço original que está armazenado o endereço da árvore original (apesar do endereço dado ser uma cópia, fazer *ele 
+ muda mesmo pois a cópia tem o mesmo valor do endereço que precisávamos. Ao fazer ele = algo é que não muda nada mesmo, 
+ pois ai estaria a mudar a variável local que é apenas uma cópia. Aqui não há muita preocupação de casos especiais, não há 
+ preocupação de ligar os anteriores ao criados (dado que já estarei a alterar o conteúdo no qual pertence o anterior, ou seja, 
+ esatrei já a alterar o valor do anterior, poid tenho acesso ao &anterior, o anterior é um Abin como o argumento) */
+void insere_2 (ABin * a,int x)
+{
+	
+while (*a)
+{       
+        if ((*a)->valor > x)
+                a = &((*a)->esq);
+        else
+                a = &((*a)->dir);
+}
+
+*a = newABin (x,NULL,NULL);
+
+}
+
+ABin removeRaiz (ABin a)
+{
+ABin tmp;
+
+if (a->esq == NULL)
+       {
+	tmp = a;
+	a = a->dir;
+	free (tmp);// "eu não preciso mais dessa posição de memória (mas nada é feito lá - é só questão de educação)"
+       }
+       else if (a->dir == NULL)
+	      {
+	       tmp = a;
+	       a = a->esq;
+	       free (tmp);
+	      }
+             else;   // Ambas as sub-árvores são NÃO NULAS
+             /* Uma das formas de fazer é colocar toda a sub-árvora da esquerda pendurada no lado esquerdo do menor nodo da direita 
+			 (mais a esquerda possível)- ou o contrário, colocar toda a sub-árvore direita pendurada do lado direito do maior nodo da 
+			 direita (mais a direita possível). Ora, essas soluções não seriam muito boas porque a árvore ficaria demasiada profunda*/
+             /* Uma boa solução é pegar no maior elemento da sub-árvore esquerda e meter ele como raíz, pois ele é maior que toda a 
+			 sub-árvore da esquerda e menor que toda a sub-árvore da direita - características de uma raíz*/ 
+            // Então agora vou a sub-árvore da esquerda, reitro seu maior elemento (é aquele que está mais a direita possível) e promovo 
+			//ele a raíz da nova árvore.
+	    	 
+return a;
+}
+
+int maiorAB (ABin a)
+{
+while (a->dir != NULL)
+	a = a->dir;
+return a->valor;
+}
+
+ABin removeMaior_1 (ABin a)
+{
+// CONFIRMAR SE NÃO DÁ MERDA QUANDO RECEBO UMA ÁRVORE QUE SÓ TENHA UMA RAÍZ OU QUE NEM SEQUER TENHA LADO DIREITO
+// ,Sim, realmente dá merda, devo corrigir- a próx função virá corrigida
+ABin ant,pt;
+pt = a;
+while (pt->dir != NULL)
+{
+	ant = pt ;
+	pt = pt->dir;
+}
+// pt tem o elemento a remover
+// pt está a direita do ant
+// ant->dir = NULL;// Isto é radical demais, não devo colocar NULL porque se tiver conteudo na sub-árvore esquerda, esta assumirá a 
+//posição daquele que vou retirar. Se colocasse NULL iria exluir possíveis partes da árvore.
+ant->dir = pt->esq;
+free (pt);
+
+return a;
+}
+
+ABin removeMaior_2 (ABin *sitio)
 {
 ABin pt;
 
 while ((*sitio)->dir != NULL)
 {
-	sitio = &((*sitio)->dir);
+sitio = &((*sitio)->dir);
 }
-pt = *sitio;
 /* Sei que "*sitio" é um apontador para uma árvore binária,isto é, é o endereço de uma árvore 
 binária. Ao fazer (*sitio)->dir estou acessando outro apontador para uma árvore binária, isto é, 
 um outro endereço de uma árvore binária. Porém, ao fazer &((*sitio)->dir) estou acessando o endereço 
@@ -146,33 +258,11 @@ dos seus ramos (que é o que eu estou atualmente) - e não adianta fazer sitio =
 o antigo ramo estaria a apontar para sito e também não adiantaria fazer  &sitio porque nesse caso 
 estou perante uma nova variável de uma outa função, ou seja, &sitio não é exatamente o endereço do 
 local no qual está armazenado o valor do ramo (dir ou esque) sitio - que é um endereço de árvore binária - 
-do antigo nodo. &sitio é um valor aleatória qualquer aqui.  */
-*sitio = pt->esq;
+do antigo nodo. &sitio é um valor aleatória qualquer aqui. */
+pt = *sitio; // *sitio tem o nodo com maior elemento dado que (*sitio)->dir = NULL
+*sitio = pt->esq; // Mesmo que *sitio = (*sitio)->esq // Processo de desligar o nodo com maior elemento
+
 return pt;
 }
 
-/* Recebe uma árvore binária de procura NÃO NULA e retorna essa
-árvore (de procura) sem a raíz*/
-ABin removeRaiz (ABin a)
-{
-ABin tmp;
-
-if (a->esq == NULL)
-{
-	tmp = a;
-	a = a->dir;
-	free (tmp);
-}
-else if (a->dir == NULL) 
-      {
-      	tmp = a;
-	a = a->esq;
-	free(tmp);
-      }
-      else 
-      {
-      // Ambas as sub-árvores são NÃO NULAS
-      }
-return a;
-}
 

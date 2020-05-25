@@ -83,14 +83,59 @@ int procura_iterativa(int x, ABin a);
 /**
 \brief Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura.
 Devolve uma árvore de procura com os elementos de "a" e "x".
+Obs: algorítimo recrusivo.
 @param a árvore que vamos inserir um elemento 
 @param x elemento a ser inserido na árvore a
 */
 
-ABin insere (ABin a, int x);
+ABin insere_recursiva (ABin a, int x);
 
+/**
+\brief Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura.
+Devolve uma árvore de procura com os elementos de "a" e "x".
+Obs: algorítimo iterativo.
+@param a árvore que vamos inserir um elemento
+@param x elemento a ser inserido na árvore a
+*/
 
-ABin removeMaior (ABin *sitio);
+ABin insere_iterativa (ABin a, int x);
+
+/**
+\brief Dado o endereço do endereço de uma árvore binária de procura e um elemento, insere esse elemento x na árvore dada. 
+@param a endereço do endereço da árvore que vamos inserir um elemento
+@param x elemento a ser inserido na árvore *a
+*/
+
+void insere_2 (ABin * a, int x);
+
+/**
+\brief recebe uma árvore binária NÃO NULA de PROCURA e retorna essa árvore sem a raíz
+@param a árvore  que vamos tirar a raíz.
+*/
+
+ABin removeRaiz (ABin a);
+
+/**
+\brief Diz qual é o maior elemento de uma árvore binária de procura não nula. Devolve tal elemento.
+@param a árvore no qual vamos procurar o maior elemento
+*/
+
+int maiorAB (ABin a);
+
+/**
+\brief Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna a árvore sem o maior elemento . Recebe uma árvore de Procura NÃO NULA.
+@param a árvore não nula a qual vamos retirar o maior elemento.
+*/
+
+ABin removeMaior_1 (ABin a);
+
+/**
+\brief Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna o nodo no qual está o maior elemento. Servepara árvores binárias de Procura NÃO NULA.
+Obs: recebe o endereço do endereço de uma árvore binária de procura. Isto porque iremos devolver algo que não é a árvore e vamos querer modificar ela também, então passa-se o pointer do ABin para fazer 2 em 1 (diferente da função anterior que até modificava a árvore, mas devolvia ela mesma.
+@param sitio
+*/
+
+ABin removeMaior_2 (ABin *sitio);
 
 // em projeto
 ABin removeRaiz (ABin a);
