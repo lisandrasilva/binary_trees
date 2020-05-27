@@ -1,5 +1,5 @@
 /**
-@file arvore_binaria_1.h
+@file Btree_functions.h
 Funções de manuseamento de árvores binárias (algumas de procura)*/
 
 #ifndef ARVORE_BINARIA_H
@@ -136,6 +136,14 @@ Obs: recebe o endereço do endereço de uma árvore binária de procura. Isto po
 */
 
 ABin removeMaior_2 (ABin *sitio);
+
+/**
+\brief Liberta todos os nodos com profundidade superior a profundidade dada. Retorna o número de elementos tirados.
+@param a endereço de um ABin;
+@param profundidade nível máximo em que os elementos vão se manter
+*/
+
+int pruneAB (ABin *a,int profundidade);
 
 // em projeto
 ABin removeRaiz (ABin a);

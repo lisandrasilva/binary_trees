@@ -1,7 +1,7 @@
 CFLAGS = -std=gnu11 -Wall -Wextra -pedantic-errors -O
 CC = gcc
 
-ex: main_arvore_binaria.o arvore_binaria_1.o
+ex: Btree_main.o Btree_functions.o
 	$(CC) $(CFLAGS) -o Executavel $^ 
 
 run: ex

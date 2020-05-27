@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "arvore_binaria_1.h"
+#include "Btree_functions.h"
 
 ABin newABin (int r, ABin e, ABin d)
 {
@@ -265,4 +265,27 @@ pt = *sitio; // *sitio tem o nodo com maior elemento dado que (*sitio)->dir = NU
 return pt;
 }
 
+/* Remove (libertando o espaço respectivo) todos os elementos da árvore *a que estão a uma profundidade superior a l, 
+retornando o número de elementos removidos. Assuma que a profundidade da raíz da árvore é 1, e por isso a invocação de 
+pruneAB(&a,0) corresponde a remover todos os elementos da árvore a.*/
 
+int pruneAB (ABin *a, int l)
+{
+int elem_removidos  = 0;
+
+if (l > 0 && *a != NULL)
+{
+       elem_removidos =  pruneAB (&((*a)->esq), l - 1) +  pruneAB (&((*a)->dir), l - 1);
+
+}
+
+// Sei que estou num nodo que posso libertar se for diferente de NULL.
+else if (*a != NULL && l <= 0)
+{
+elem_removidos = 1 +  pruneAB (&((*a)->esq),l - 1) //remove todos os elementos da sub-árvore esquerda
+                   +  pruneAB (&((*a)->dir),l - 1); // remove todos os elementos da sub-árvore direita
+free (*a);
+*a = NULL;
+}
+return elem_removidos;
+}
