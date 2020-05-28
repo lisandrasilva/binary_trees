@@ -201,11 +201,43 @@ if (a->esq == NULL)
 return a;
 }
 
-int maiorAB (ABin a)
+int maiorAB_Deprocura (ABin a)
 {
 while (a->dir != NULL)
 	a = a->dir;
 return a->valor;
+}
+
+int maior_elemento (ABin a, int x)
+{
+int res = 0;
+
+if (!a) return 1;
+else if (x > a->valor)
+        {
+        	res = maior_elemento (a->esq,x);
+            if (res != 0)
+            	res = maior_elemento (a->dir,x);
+        }
+     else if (x < a->valor)
+           		res =  0;
+return res;
+}
+
+int menor_elemento (ABin a, int x)
+{
+int res = 0;
+
+if (!a) return 1;
+else if (x < a->valor)
+        {
+        	res = menor_elemento (a->esq,x);
+            if (res != 0)
+            	res = menor_elemento (a->dir,x);
+        }
+      else if (x > a->valor)
+             	return 0;
+return res;
 }
 
 ABin removeMaior_1 (ABin a)
@@ -289,3 +321,56 @@ free (*a);
 }
 return elem_removidos;
 }
+
+int nivelV (ABin a, int n, int v[])
+{
+	int res = 0;
+
+	if (!n || !a) return res;
+
+	else if (n == 1 && a)
+	     {
+			 v[res] = a->valor;
+			 res++;
+		 }
+		 else if (a)
+		 	  {
+				  res = nivelV ( a->esq, n - 1, v);
+				  res += nivelV ( a->dir, n - 1, v + res);
+			  }
+	return res;
+}
+
+int quantosMaiores (ABin a, int x)
+{
+int res = 0;
+
+if (!a) return res;
+ 	else if (a->valor < x || a->valor == x)
+		res = quantosMaiores (a->dir, x);
+		else if (a->valor > x)
+			{
+			res++;
+			res += quantosMaiores (a->esq, x);
+			res += quantosMaiores (a->dir, x);
+			}
+return res;
+}
+
+int deProcura (ABin a)
+{
+int res = 0;
+
+if (!a) 
+	return 1;
+else if (maior_elemento (a->esq, a->valor)
+         && menor_elemento (a->dir, a->valor))
+        {
+         	res = deProcura (a->esq);
+            if (res != 0)
+                    res = deProcura (a->dir);
+        }
+        else res = 0;
+return res;
+}
+

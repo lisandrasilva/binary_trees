@@ -139,11 +139,52 @@ ABin removeMaior_2 (ABin *sitio);
 
 /**
 \brief Liberta todos os nodos com profundidade superior a profundidade dada. Retorna o número de elementos tirados.
-@param a endereço de um ABin;
+@param a endereço de um ABin
 @param profundidade nível máximo em que os elementos vão se manter
 */
 
 int pruneAB (ABin *a,int profundidade);
+
+/**
+\brief Preenche o vector v com os elementos de a que se encontram no nível (profundidade) n. Considere que a raíz da árvore se encontra no nível 1. A função deverá retornar o número de posições preenchidas do array.
+@param a árvore binária que servirá para buscar os elementos
+@param n profundidade
+@param v array em que se vai inserir os elementos
+*/
+
+int nivelV (ABin a, int n, int v[]);
+
+/**
+\brief Dada uma árvore binária de procura de inteiros e um inteiro, conta quantos elementos da árvore são
+maiores que o inteiro dado. Devolve o número de elementos contado.
+@param a árvore binária de procura
+@param x inteiro a considerar
+*/
+
+int quantosMaiores (ABin a, int x);
+
+/**
+\brief Dada uma árvore a (não necessariamente de procura) avalia se o inteiro x dado no argumento é maior que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário.
+@param a árvore binária (não necessariamente de procura)
+@param x elemento que vamos ver se é maior que todos os elementos da árvore
+*/
+
+int maior_elemento (ABin a, int x);
+
+/**
+\brief Dada uma árvore a (não necessáriamente de procura) avalia se o inteiro x dado no argumento é menor que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário.
+@param a árvore binária (não necessariamente de procura)
+@para, x elemento que vamos ver se é menor que todos os elementos da árvore
+*/
+
+int menor_elemento (ABin a , int x);
+
+/**
+\brief Testa se uma árvore é de procura (isto é, se dado um nodo, todos os elementos na sub-árvore da esquerda são menores que a raíz enquanto todos os elementos da sub-árvore direita são maiores que a raíz.
+@param a árvore binária que vamos testar se é de procura
+*/
+
+int deProcura (ABin a);
 
 // em projeto
 ABin removeRaiz (ABin a);

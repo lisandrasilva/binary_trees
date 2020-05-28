@@ -1,0 +1,23 @@
+\hypertarget{structdlista}{}\section{dlista Struct Reference}
+\label{structdlista}\index{dlista@{dlista}}
+
+
+Collaboration diagram for dlista\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdlista_a12dc6368d425a0914adfdfa7fbf892b7}\label{structdlista_a12dc6368d425a0914adfdfa7fbf892b7}} 
+int {\bfseries valor}
+\item 
+\mbox{\Hypertarget{structdlista_ab34afb7134b809dc1acc73a5ed756e88}\label{structdlista_ab34afb7134b809dc1acc73a5ed756e88}} 
+struct \hyperlink{structdlista}{dlista} $\ast$ {\bfseries prox}
+\item 
+\mbox{\Hypertarget{structdlista_ad20571ad6978608ed79a9d5dc182677b}\label{structdlista_ad20571ad6978608ed79a9d5dc182677b}} 
+struct \hyperlink{structdlista}{dlista} $\ast$ {\bfseries ant}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+arvore\+\_\+binaria\+\_\+2.\+c\end{DoxyCompactItemize}

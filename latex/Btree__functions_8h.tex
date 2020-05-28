@@ -1,0 +1,375 @@
+\hypertarget{Btree__functions_8h}{}\section{Btree\+\_\+functions.\+h File Reference}
+\label{Btree__functions_8h}\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnodo}{nodo}
+\begin{DoxyCompactList}\small\item\em estrutura de uma árvore binária \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Btree__functions_8h_a403840f19716a992bb23f8d4f08c5122}\label{Btree__functions_8h_a403840f19716a992bb23f8d4f08c5122}} 
+typedef struct \hyperlink{structnodo}{nodo} $\ast$ \hyperlink{Btree__functions_8h_a403840f19716a992bb23f8d4f08c5122}{A\+Bin}
+\begin{DoxyCompactList}\small\item\em estrutura de uma árvore binária \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structnodo}{A\+Bin} \hyperlink{Btree__functions_8h_a685efcc552dc86e8d7ab36586c1b90b3}{new\+A\+Bin} (int r, \hyperlink{structnodo}{A\+Bin} e, \hyperlink{structnodo}{A\+Bin} d)
+\begin{DoxyCompactList}\small\item\em Dada 2 árvores binárias, cria uma nova árvore sendo o valor da nova raíz aquele que foi dado como argumento e cada nodo (esq e dir) uma das árvores dadas como argumento. Não há preocupação nenhuma se a árvore é de procura, apenas é acrescentado uma nova raíz principal. Devolve o apontador (endereço que a nova árvore começa) para a nova árvore. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_aafb1cc778cb27c480495476296680cc0}{size} (\hyperlink{structnodo}{A\+Bin} a)
+\begin{DoxyCompactList}\small\item\em Conta o número de elementos de uma árvore binária (e o devolve). \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a967d2e59374dac885f71833430b0cb0a}{to\+Array} (\hyperlink{structnodo}{A\+Bin} a, int v\mbox{[}$\,$\mbox{]}, int N)
+\begin{DoxyCompactList}\small\item\em Recebe uma árvore binária de procura, um array (que será formado), a quantidade de elementos N que vamos inserir no array e preenche o array dado no argumento, a partir da árvore binária de procura, com no máximo N elementos. Retorna o número de elementos escritos no array. Escreve o array em ordem crescente, caso a árvore binária dada for de procura. \end{DoxyCompactList}\item 
+\hyperlink{structnodo}{A\+Bin} \hyperlink{Btree__functions_8h_a9d8e52261caf3d3907351e8940df4dee}{from\+Array} (int v\mbox{[}$\,$\mbox{]}, int N)
+\begin{DoxyCompactList}\small\item\em Faz uma árvore a partir de um array com N elementos. O elemento que está no meio do array será o que está na raíz. Desse jeito, se o array esttiver ordenado, então, na árvore, todos os elementos que estão a esquerda é menor que a raíz que por conseguinte é menor do que os elementos a direita, por tanto se o array estiver ordenado, a árvore será de procura. Retorna um apontador para a árvore criada. Obs\+: sempre que eu quiser saber quantos elementos há entre as posições A e B, devo fazer (A -\/ B + 1) \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a77d00c7e06f24d7861f93d1d8f856fcf}{procura\+\_\+recursiva} (int x, \hyperlink{structnodo}{A\+Bin} a)
+\begin{DoxyCompactList}\small\item\em Procura o elemento \char`\"{}x\char`\"{} na árvore de Procura \char`\"{}a\char`\"{}. Devolve 1 se \char`\"{}x\char`\"{} existe na árvore \char`\"{}a\char`\"{}.Obs\+: algorítmo recursivo. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a173016d1c877f7c558dc883612b60f0c}{procura\+\_\+iterativa} (int x, \hyperlink{structnodo}{A\+Bin} a)
+\begin{DoxyCompactList}\small\item\em Procura o elemento \char`\"{}x\char`\"{} na árvore de Procura \char`\"{}a\char`\"{}. Devolve 1 se \char`\"{}x\char`\"{} existe na árvore \char`\"{}a\char`\"{}.Obs\+: algorítmo iterativo. \end{DoxyCompactList}\item 
+\hyperlink{structnodo}{A\+Bin} \hyperlink{Btree__functions_8h_a55d32e443e8f3650cf0b34a686a056b3}{insere\+\_\+recursiva} (\hyperlink{structnodo}{A\+Bin} a, int x)
+\begin{DoxyCompactList}\small\item\em Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura. Devolve uma árvore de procura com os elementos de \char`\"{}a\char`\"{} e \char`\"{}x\char`\"{}. Obs\+: algorítimo recrusivo. \end{DoxyCompactList}\item 
+\hyperlink{structnodo}{A\+Bin} \hyperlink{Btree__functions_8h_a3d75a8959048ab314266d57109455614}{insere\+\_\+iterativa} (\hyperlink{structnodo}{A\+Bin} a, int x)
+\begin{DoxyCompactList}\small\item\em Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura. Devolve uma árvore de procura com os elementos de \char`\"{}a\char`\"{} e \char`\"{}x\char`\"{}. Obs\+: algorítimo iterativo. \end{DoxyCompactList}\item 
+void \hyperlink{Btree__functions_8h_a068129cbeed616bd64082e9ab3f1e7f8}{insere\+\_\+2} (\hyperlink{structnodo}{A\+Bin} $\ast$a, int x)
+\begin{DoxyCompactList}\small\item\em Dado o endereço do endereço de uma árvore binária de procura e um elemento, insere esse elemento x na árvore dada. \end{DoxyCompactList}\item 
+\hyperlink{structnodo}{A\+Bin} \hyperlink{Btree__functions_8h_a9fa88a95ac4d4869fef8b89ab7655c8e}{remove\+Raiz} (\hyperlink{structnodo}{A\+Bin} a)
+\begin{DoxyCompactList}\small\item\em recebe uma árvore binária NÃO N\+U\+LA de P\+R\+O\+C\+U\+RA e retorna essa árvore sem a raíz \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a5b9bd25eed75c69aa380b70bfded535c}{maior\+AB} (\hyperlink{structnodo}{A\+Bin} a)
+\begin{DoxyCompactList}\small\item\em Diz qual é o maior elemento de uma árvore binária de procura não nula. Devolve tal elemento. \end{DoxyCompactList}\item 
+\hyperlink{structnodo}{A\+Bin} \hyperlink{Btree__functions_8h_a57417de8f171b8a29896f9d75cd75968}{remove\+Maior\+\_\+1} (\hyperlink{structnodo}{A\+Bin} a)
+\begin{DoxyCompactList}\small\item\em Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna a árvore sem o maior elemento . Recebe uma árvore de Procura NÃO N\+U\+LA. \end{DoxyCompactList}\item 
+\hyperlink{structnodo}{A\+Bin} \hyperlink{Btree__functions_8h_a768e672fda20afeade4c5dcb64800e63}{remove\+Maior\+\_\+2} (\hyperlink{structnodo}{A\+Bin} $\ast$sitio)
+\begin{DoxyCompactList}\small\item\em Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna o nodo no qual está o maior elemento. Servepara árvores binárias de Procura NÃO N\+U\+LA. Obs\+: recebe o endereço do endereço de uma árvore binária de procura. Isto porque iremos devolver algo que não é a árvore e vamos querer modificar ela também, então passa-\/se o pointer do A\+Bin para fazer 2 em 1 (diferente da função anterior que até modificava a árvore, mas devolvia ela mesma. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a0fd9d3a5240cc8f0eea07fff3ad5339f}{prune\+AB} (\hyperlink{structnodo}{A\+Bin} $\ast$a, int profundidade)
+\begin{DoxyCompactList}\small\item\em Liberta todos os nodos com profundidade superior a profundidade dada. Retorna o número de elementos tirados. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a09f2e5225228c5bf0622932e0f908cd7}{nivelV} (\hyperlink{structnodo}{A\+Bin} a, int n, int v\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Preenche o vector v com os elementos de a que se encontram no nível (profundidade) n. Considere que a raíz da árvore se encontra no nível 1. A função deverá retornar o número de posições preenchidas do array. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_ab19c649e5ba84a24f842876e0f0d4c7c}{quantos\+Maiores} (\hyperlink{structnodo}{A\+Bin} a, int x)
+\begin{DoxyCompactList}\small\item\em Dada uma árvore binária de procura de inteiros e um inteiro, conta quantos elementos da árvore são maiores que o inteiro dado. Devolve o número de elementos contado. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a2bef7e38a5aa497f7a56bdfd44a82fce}{maior\+\_\+elemento} (\hyperlink{structnodo}{A\+Bin} a, int x)
+\begin{DoxyCompactList}\small\item\em Dada uma árvore a (não necessariamente de procura) avalia se o inteiro x dado no argumento é maior que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_ac08e907b9798aca1e0b2c3f9024dd380}{menor\+\_\+elemento} (\hyperlink{structnodo}{A\+Bin} a, int x)
+\begin{DoxyCompactList}\small\item\em Dada uma árvore a (não necessáriamente de procura) avalia se o inteiro x dado no argumento é menor que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário. \end{DoxyCompactList}\item 
+int \hyperlink{Btree__functions_8h_a177b95a5da9e02b3b0e701fdf64a72b6}{de\+Procura} (\hyperlink{structnodo}{A\+Bin} a)
+\begin{DoxyCompactList}\small\item\em Testa se uma árvore é de procura (isto é, se dado um nodo, todos os elementos na sub-\/árvore da esquerda são menores que a raíz enquanto todos os elementos da sub-\/árvore direita são maiores que a raíz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Funções de manuseamento de árvores binárias (algumas de procura) 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Btree__functions_8h_a177b95a5da9e02b3b0e701fdf64a72b6}\label{Btree__functions_8h_a177b95a5da9e02b3b0e701fdf64a72b6}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!de\+Procura@{de\+Procura}}
+\index{de\+Procura@{de\+Procura}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{de\+Procura()}{deProcura()}}
+{\footnotesize\ttfamily int de\+Procura (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a }\end{DoxyParamCaption})}
+
+
+
+Testa se uma árvore é de procura (isto é, se dado um nodo, todos os elementos na sub-\/árvore da esquerda são menores que a raíz enquanto todos os elementos da sub-\/árvore direita são maiores que a raíz. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore binária que vamos testar se é de procura \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a9d8e52261caf3d3907351e8940df4dee}\label{Btree__functions_8h_a9d8e52261caf3d3907351e8940df4dee}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!from\+Array@{from\+Array}}
+\index{from\+Array@{from\+Array}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{from\+Array()}{fromArray()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{A\+Bin} from\+Array (\begin{DoxyParamCaption}\item[{int}]{v\mbox{[}$\,$\mbox{]},  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Faz uma árvore a partir de um array com N elementos. O elemento que está no meio do array será o que está na raíz. Desse jeito, se o array esttiver ordenado, então, na árvore, todos os elementos que estão a esquerda é menor que a raíz que por conseguinte é menor do que os elementos a direita, por tanto se o array estiver ordenado, a árvore será de procura. Retorna um apontador para a árvore criada. Obs\+: sempre que eu quiser saber quantos elementos há entre as posições A e B, devo fazer (A -\/ B + 1) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & array que será buscado os elementos para formar a árvore \\
+\hline
+{\em quantidade} & de elementos que irei buscar do array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a068129cbeed616bd64082e9ab3f1e7f8}\label{Btree__functions_8h_a068129cbeed616bd64082e9ab3f1e7f8}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!insere\+\_\+2@{insere\+\_\+2}}
+\index{insere\+\_\+2@{insere\+\_\+2}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{insere\+\_\+2()}{insere\_2()}}
+{\footnotesize\ttfamily void insere\+\_\+2 (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin} $\ast$}]{a,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Dado o endereço do endereço de uma árvore binária de procura e um elemento, insere esse elemento x na árvore dada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & endereço do endereço da árvore que vamos inserir um elemento \\
+\hline
+{\em x} & elemento a ser inserido na árvore $\ast$a \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a3d75a8959048ab314266d57109455614}\label{Btree__functions_8h_a3d75a8959048ab314266d57109455614}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!insere\+\_\+iterativa@{insere\+\_\+iterativa}}
+\index{insere\+\_\+iterativa@{insere\+\_\+iterativa}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{insere\+\_\+iterativa()}{insere\_iterativa()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{A\+Bin} insere\+\_\+iterativa (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura. Devolve uma árvore de procura com os elementos de \char`\"{}a\char`\"{} e \char`\"{}x\char`\"{}. Obs\+: algorítimo iterativo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore que vamos inserir um elemento \\
+\hline
+{\em x} & elemento a ser inserido na árvore a \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a55d32e443e8f3650cf0b34a686a056b3}\label{Btree__functions_8h_a55d32e443e8f3650cf0b34a686a056b3}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!insere\+\_\+recursiva@{insere\+\_\+recursiva}}
+\index{insere\+\_\+recursiva@{insere\+\_\+recursiva}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{insere\+\_\+recursiva()}{insere\_recursiva()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{A\+Bin} insere\+\_\+recursiva (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura. Devolve uma árvore de procura com os elementos de \char`\"{}a\char`\"{} e \char`\"{}x\char`\"{}. Obs\+: algorítimo recrusivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore que vamos inserir um elemento \\
+\hline
+{\em x} & elemento a ser inserido na árvore a \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a2bef7e38a5aa497f7a56bdfd44a82fce}\label{Btree__functions_8h_a2bef7e38a5aa497f7a56bdfd44a82fce}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!maior\+\_\+elemento@{maior\+\_\+elemento}}
+\index{maior\+\_\+elemento@{maior\+\_\+elemento}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{maior\+\_\+elemento()}{maior\_elemento()}}
+{\footnotesize\ttfamily int maior\+\_\+elemento (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Dada uma árvore a (não necessariamente de procura) avalia se o inteiro x dado no argumento é maior que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore binária (não necessariamente de procura) \\
+\hline
+{\em x} & elemento que vamos ver se é maior que todos os elementos da árvore \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a5b9bd25eed75c69aa380b70bfded535c}\label{Btree__functions_8h_a5b9bd25eed75c69aa380b70bfded535c}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!maior\+AB@{maior\+AB}}
+\index{maior\+AB@{maior\+AB}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{maior\+A\+B()}{maiorAB()}}
+{\footnotesize\ttfamily int maior\+AB (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a }\end{DoxyParamCaption})}
+
+
+
+Diz qual é o maior elemento de uma árvore binária de procura não nula. Devolve tal elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore no qual vamos procurar o maior elemento \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_ac08e907b9798aca1e0b2c3f9024dd380}\label{Btree__functions_8h_ac08e907b9798aca1e0b2c3f9024dd380}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!menor\+\_\+elemento@{menor\+\_\+elemento}}
+\index{menor\+\_\+elemento@{menor\+\_\+elemento}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{menor\+\_\+elemento()}{menor\_elemento()}}
+{\footnotesize\ttfamily int menor\+\_\+elemento (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Dada uma árvore a (não necessáriamente de procura) avalia se o inteiro x dado no argumento é menor que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore binária (não necessariamente de procura) , x elemento que vamos ver se é menor que todos os elementos da árvore \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a685efcc552dc86e8d7ab36586c1b90b3}\label{Btree__functions_8h_a685efcc552dc86e8d7ab36586c1b90b3}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!new\+A\+Bin@{new\+A\+Bin}}
+\index{new\+A\+Bin@{new\+A\+Bin}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{new\+A\+Bin()}{newABin()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{A\+Bin} new\+A\+Bin (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{\hyperlink{structnodo}{A\+Bin}}]{e,  }\item[{\hyperlink{structnodo}{A\+Bin}}]{d }\end{DoxyParamCaption})}
+
+
+
+Dada 2 árvores binárias, cria uma nova árvore sendo o valor da nova raíz aquele que foi dado como argumento e cada nodo (esq e dir) uma das árvores dadas como argumento. Não há preocupação nenhuma se a árvore é de procura, apenas é acrescentado uma nova raíz principal. Devolve o apontador (endereço que a nova árvore começa) para a nova árvore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & valor a inserir na raíz da nova árvore \\
+\hline
+{\em e} & árvore que será a subárvore da esquerda \\
+\hline
+{\em d} & árvore que será a subárvore da direita \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a09f2e5225228c5bf0622932e0f908cd7}\label{Btree__functions_8h_a09f2e5225228c5bf0622932e0f908cd7}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!nivelV@{nivelV}}
+\index{nivelV@{nivelV}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{nivel\+V()}{nivelV()}}
+{\footnotesize\ttfamily int nivelV (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a,  }\item[{int}]{n,  }\item[{int}]{v\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Preenche o vector v com os elementos de a que se encontram no nível (profundidade) n. Considere que a raíz da árvore se encontra no nível 1. A função deverá retornar o número de posições preenchidas do array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore binária que servirá para buscar os elementos \\
+\hline
+{\em n} & profundidade \\
+\hline
+{\em v} & array em que se vai inserir os elementos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a173016d1c877f7c558dc883612b60f0c}\label{Btree__functions_8h_a173016d1c877f7c558dc883612b60f0c}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!procura\+\_\+iterativa@{procura\+\_\+iterativa}}
+\index{procura\+\_\+iterativa@{procura\+\_\+iterativa}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{procura\+\_\+iterativa()}{procura\_iterativa()}}
+{\footnotesize\ttfamily int procura\+\_\+iterativa (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{\hyperlink{structnodo}{A\+Bin}}]{a }\end{DoxyParamCaption})}
+
+
+
+Procura o elemento \char`\"{}x\char`\"{} na árvore de Procura \char`\"{}a\char`\"{}. Devolve 1 se \char`\"{}x\char`\"{} existe na árvore \char`\"{}a\char`\"{}.Obs\+: algorítmo iterativo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & elemento a ser procurado \\
+\hline
+{\em a} & árvore em que vamos procurar o elemento x \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a77d00c7e06f24d7861f93d1d8f856fcf}\label{Btree__functions_8h_a77d00c7e06f24d7861f93d1d8f856fcf}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!procura\+\_\+recursiva@{procura\+\_\+recursiva}}
+\index{procura\+\_\+recursiva@{procura\+\_\+recursiva}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{procura\+\_\+recursiva()}{procura\_recursiva()}}
+{\footnotesize\ttfamily int procura\+\_\+recursiva (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{\hyperlink{structnodo}{A\+Bin}}]{a }\end{DoxyParamCaption})}
+
+
+
+Procura o elemento \char`\"{}x\char`\"{} na árvore de Procura \char`\"{}a\char`\"{}. Devolve 1 se \char`\"{}x\char`\"{} existe na árvore \char`\"{}a\char`\"{}.Obs\+: algorítmo recursivo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & elemento a ser procurado \\
+\hline
+{\em a} & árvore em que vamos procurar o elemento x \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a0fd9d3a5240cc8f0eea07fff3ad5339f}\label{Btree__functions_8h_a0fd9d3a5240cc8f0eea07fff3ad5339f}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!prune\+AB@{prune\+AB}}
+\index{prune\+AB@{prune\+AB}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{prune\+A\+B()}{pruneAB()}}
+{\footnotesize\ttfamily int prune\+AB (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin} $\ast$}]{a,  }\item[{int}]{profundidade }\end{DoxyParamCaption})}
+
+
+
+Liberta todos os nodos com profundidade superior a profundidade dada. Retorna o número de elementos tirados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & endereço de um A\+Bin \\
+\hline
+{\em profundidade} & nível máximo em que os elementos vão se manter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_ab19c649e5ba84a24f842876e0f0d4c7c}\label{Btree__functions_8h_ab19c649e5ba84a24f842876e0f0d4c7c}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!quantos\+Maiores@{quantos\+Maiores}}
+\index{quantos\+Maiores@{quantos\+Maiores}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{quantos\+Maiores()}{quantosMaiores()}}
+{\footnotesize\ttfamily int quantos\+Maiores (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Dada uma árvore binária de procura de inteiros e um inteiro, conta quantos elementos da árvore são maiores que o inteiro dado. Devolve o número de elementos contado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore binária de procura \\
+\hline
+{\em x} & inteiro a considerar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a57417de8f171b8a29896f9d75cd75968}\label{Btree__functions_8h_a57417de8f171b8a29896f9d75cd75968}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!remove\+Maior\+\_\+1@{remove\+Maior\+\_\+1}}
+\index{remove\+Maior\+\_\+1@{remove\+Maior\+\_\+1}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{remove\+Maior\+\_\+1()}{removeMaior\_1()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{A\+Bin} remove\+Maior\+\_\+1 (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a }\end{DoxyParamCaption})}
+
+
+
+Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna a árvore sem o maior elemento . Recebe uma árvore de Procura NÃO N\+U\+LA. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore não nula a qual vamos retirar o maior elemento. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a768e672fda20afeade4c5dcb64800e63}\label{Btree__functions_8h_a768e672fda20afeade4c5dcb64800e63}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!remove\+Maior\+\_\+2@{remove\+Maior\+\_\+2}}
+\index{remove\+Maior\+\_\+2@{remove\+Maior\+\_\+2}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{remove\+Maior\+\_\+2()}{removeMaior\_2()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{A\+Bin} remove\+Maior\+\_\+2 (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin} $\ast$}]{sitio }\end{DoxyParamCaption})}
+
+
+
+Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna o nodo no qual está o maior elemento. Servepara árvores binárias de Procura NÃO N\+U\+LA. Obs\+: recebe o endereço do endereço de uma árvore binária de procura. Isto porque iremos devolver algo que não é a árvore e vamos querer modificar ela também, então passa-\/se o pointer do A\+Bin para fazer 2 em 1 (diferente da função anterior que até modificava a árvore, mas devolvia ela mesma. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sitio} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a9fa88a95ac4d4869fef8b89ab7655c8e}\label{Btree__functions_8h_a9fa88a95ac4d4869fef8b89ab7655c8e}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!remove\+Raiz@{remove\+Raiz}}
+\index{remove\+Raiz@{remove\+Raiz}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{remove\+Raiz()}{removeRaiz()}}
+{\footnotesize\ttfamily \hyperlink{structnodo}{A\+Bin} remove\+Raiz (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a }\end{DoxyParamCaption})}
+
+
+
+recebe uma árvore binária NÃO N\+U\+LA de P\+R\+O\+C\+U\+RA e retorna essa árvore sem a raíz 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore que vamos tirar a raíz. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_aafb1cc778cb27c480495476296680cc0}\label{Btree__functions_8h_aafb1cc778cb27c480495476296680cc0}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!size@{size}}
+\index{size@{size}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int size (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a }\end{DoxyParamCaption})}
+
+
+
+Conta o número de elementos de uma árvore binária (e o devolve). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore que será contado os elementos \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Btree__functions_8h_a967d2e59374dac885f71833430b0cb0a}\label{Btree__functions_8h_a967d2e59374dac885f71833430b0cb0a}} 
+\index{Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}!to\+Array@{to\+Array}}
+\index{to\+Array@{to\+Array}!Btree\+\_\+functions.\+h@{Btree\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{to\+Array()}{toArray()}}
+{\footnotesize\ttfamily int to\+Array (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{A\+Bin}}]{a,  }\item[{int}]{v\mbox{[}$\,$\mbox{]},  }\item[{int}]{N }\end{DoxyParamCaption})}
+
+
+
+Recebe uma árvore binária de procura, um array (que será formado), a quantidade de elementos N que vamos inserir no array e preenche o array dado no argumento, a partir da árvore binária de procura, com no máximo N elementos. Retorna o número de elementos escritos no array. Escreve o array em ordem crescente, caso a árvore binária dada for de procura. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & árvore que será buscado os elementos \\
+\hline
+{\em v} & array que será formado \\
+\hline
+{\em quantidade} & de elementos a preencher no array \\
+\hline
+\end{DoxyParams}
