@@ -374,3 +374,41 @@ else if (maior_elemento (a->esq, a->valor)
 return res;
 }
 
+int depthOrd (ABin a, int x)
+{
+int nivel = 1;
+
+if (!a)
+	return -1;
+else if (a->valor == x)
+		 return nivel;
+	 else if (a->valor > x)
+	 		   {
+				if (depthOrd (a->esq,x) == -1) // Se o resultado de eu chamar a função para a árvore esquerda for -1, devo devolver -1 e não acumular nada.
+				 	nivel = -1;
+				else 
+	 				nivel += depthOrd (a->esq,x);
+			   }
+		  else 
+		  		{
+		        if (depthOrd (a->dir,x) == -1)
+					nivel = -1;
+				else
+		  		nivel += depthOrd (a->dir,x);
+				}
+return nivel;
+}
+
+int contaFolhas (ABin a)
+{
+int numFolhas = 0;
+
+if (!a) return 0;
+
+if (a->esq == NULL && a->dir == NULL)
+	numFolhas = 1;
+else
+    numFolhas = contaFolhas (a->esq) + contaFolhas (a->dir);
+
+return numFolhas;
+}

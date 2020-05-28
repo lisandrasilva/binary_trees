@@ -186,7 +186,27 @@ int menor_elemento (ABin a , int x);
 
 int deProcura (ABin a);
 
-// em projeto
+/**
+\brief Calcula o nível (profundidade) a que um elemento está numa arvore binária de procura. Devolve -1 caso não existir.
+Obs: considere-se a ráiz nível 1.
+@param a árvore binária de procura
+@param x elementos que vamos ver o nível
+*/
+
+int depthOrd (ABin a, int x);
+
+/**
+\brief Dada uma árvore binária de inteiros (não necessariamente nula), conta quantos dos seus nodos são folhas, i.e., que não têm nenhum descendente.
+Devolve o número de folhas.
+@param a árvore binária não necessariamente de procura
+*/
+
+int contaFolhas (ABin a);
+
+// PERGUNTAR SOBRE ÁRVORES DE PROCURA TEREM ELEMENTOS IGUAIS (OU QUALQUER OUTRRA ÁRVORE)
+
+/* em projeto
 ABin removeRaiz (ABin a);
+*/
 
 #endif
