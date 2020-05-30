@@ -469,10 +469,26 @@ else
 return arvB;
 }
 
-/* EM processo
+LInt concatLligadas (LInt l1, LInt l2)
+{
+LInt l3 = l1;
+
+if (!l1)
+	l3 = l2;
+else 
+	{
+	while (l1->prox)
+		   l1 = l1->prox;
+
+	l1->prox = l2;
+	}
+
+return l3;
+}
+
 LInt nivelL (ABin a, int n)
 {
-LInt lista;
+LInt lista,lista2;
 
 if (!a)
 	return NULL;
@@ -483,15 +499,13 @@ else if (n == 1)
 	 else 
 	 	{
 			 lista = nivelL (a->esq, n - 1);
-			 lista->prox = nivelL (a->dir,n -1);
+			 lista2 = nivelL (a->dir,n -1);
+			 lista = concatLligadas (lista,lista2);
 		 }
 
-
 return lista;
-
 }
 
-*/
 
 
 

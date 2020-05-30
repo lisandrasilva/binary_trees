@@ -255,6 +255,13 @@ raiz da árvore está ao nível 1).
 
 LInt nivelL (ABin a, int n);
 
+/**
+\brief  Dada uma lista l1 e uma l2, junta l2 no fim de l1. Devolve l2 apenas quando l1 for nula.
+@param l1 lista ligada
+@param l2 lista ligada
+*/
+
+LInt concatLligadas (LInt l1, LInt l2);
 
 // PERGUNTAR SOBRE ÁRVORES DE PROCURA TEREM ELEMENTOS IGUAIS (OU QUALQUER OUTRRA ÁRVORE)
 
