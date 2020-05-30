@@ -12,6 +12,16 @@ ABin newABin (int r, ABin e, ABin d)
 	return a;
 }
 
+LInt newlligada (int x, LInt l)
+{
+	LInt l2 = malloc (sizeof (struct lligada));
+
+	l2->valor = x;
+	l2->prox = l;
+
+	return l2; 
+}
+
 int size (ABin a)
 {
 int r = 0;
@@ -412,3 +422,104 @@ else
 
 return numFolhas;
 }
+
+ABin cloneMirror (ABin a)
+{
+ABin arvB;
+
+if (!a)
+	return (arvB = NULL);
+else 
+	{// Inverter sub-árvores;
+	arvB = newABin (a->valor,NULL,NULL);
+	arvB->dir = cloneMirror (a->esq);
+	arvB->esq = cloneMirror (a->dir);
+	}
+
+return arvB;
+}
+
+int somaElementos (ABin a)
+{
+int res = 0;
+
+if (!a)
+        return res;
+else
+        {
+                res = a->valor;
+                res += somaElementos (a->esq);
+                res += somaElementos (a->dir);
+        }
+return res;
+}
+
+ABin somasAcA (ABin a)
+{
+ABin arvB;
+
+if (!a)
+        return (arvB = NULL);
+else
+        {
+                arvB = newABin (somaElementos(a), NULL,NULL);
+                arvB->dir = somasAcA (a->dir);
+                arvB->esq = somasAcA (a->esq);
+        }
+return arvB;
+}
+
+/* EM processo
+LInt nivelL (ABin a, int n)
+{
+LInt lista;
+
+if (!a)
+	return NULL;
+else if (n == 1)
+	 {
+		 lista = newlligada (a->valor,NULL);
+	 }
+	 else 
+	 	{
+			 lista = nivelL (a->esq, n - 1);
+			 lista->prox = nivelL (a->dir,n -1);
+		 }
+
+
+return lista;
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,6 +15,15 @@ typedef struct nodo {
 } *ABin;
 
 /**
+\brief estrutura de uma lista ligada
+*/
+
+typedef struct lligada {
+    int valor;
+    struct lligada *prox;
+} *LInt;
+
+/**
 \brief Dada 2 árvores binárias, cria uma nova árvore sendo
 o valor da nova raíz aquele que foi dado como argumento e 
 cada nodo (esq e dir) uma das árvores dadas como argumento.
@@ -27,6 +36,14 @@ Não há preocupação nenhuma se a árvore é de procura, apenas
 @param d árvore que será a subárvore da direita
 */
 ABin newABin (int r, ABin e, ABin d);
+
+/**
+\brief Cria uma lista ligada dado um elemento e a próxima lista a apontar.
+@param x elemento a inserir
+@param l próxima lista a apontar
+*/
+
+LInt newlligada (int x, LInt l); 
 
 /**
 \brief Conta o número de elementos de uma árvore binária (e o devolve).
@@ -202,6 +219,42 @@ Devolve o número de folhas.
 */
 
 int contaFolhas (ABin a);
+
+/**
+\brief Cria uma árvore nova, com o resultado de inverter a árvore dada no argumento (efeito espelho)
+Devolve a árvore criada.
+@param a árvore a inverter (não necessariamente de procura)
+*/
+
+ABin cloneMirror (ABin a);
+
+/**
+\brief Dada uma árvore de inteiros, calcula a árvore das somas acumuladas dessa árvore.
+A árvore calculada deve ter a mesma forma da árvore recebida como argumento e em cada 
+nodo deve conter a soma dos elementos da sub-árvore que aí se inicia.
+Devolve a sub-árvore criada.
+@param a árvore (não necessariamente de procura)
+*/
+
+ABin somasAcA (ABin a);
+
+/**
+\brief Dada uma árvore, não necessariamente de procura, retorna a soma de todos os seus elementos.
+@param a árvore binária
+*/
+
+int somaElementos (ABin a);
+
+/**
+\brief Dada uma  ́arvore binária (não necessariamente de procura), constrói uma lista 
+com os valores dos elementos que estão armazenados na árvore ao nível n (assuma que a 
+raiz da árvore está ao nível 1).
+@param a árvore binária
+@param n nível
+*/
+
+LInt nivelL (ABin a, int n);
+
 
 // PERGUNTAR SOBRE ÁRVORES DE PROCURA TEREM ELEMENTOS IGUAIS (OU QUALQUER OUTRRA ÁRVORE)
 
