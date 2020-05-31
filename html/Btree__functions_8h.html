@@ -74,6 +74,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnodo.html">nodo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">estrutura de uma árvore binária  <a href="structnodo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlligada.html">lligada</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">estrutura de uma lista ligada  <a href="structlligada.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -81,70 +84,229 @@ Typedefs</h2></td></tr>
 typedef struct <a class="el" href="structnodo.html">nodo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a></td></tr>
 <tr class="memdesc:a403840f19716a992bb23f8d4f08c5122"><td class="mdescLeft">&#160;</td><td class="mdescRight">estrutura de uma árvore binária <br /></td></tr>
 <tr class="separator:a403840f19716a992bb23f8d4f08c5122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0a80251ccee863073192b2f3e790cdc"><td class="memItemLeft" align="right" valign="top"><a id="af0a80251ccee863073192b2f3e790cdc"></a>
+typedef struct <a class="el" href="structlligada.html">lligada</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a></td></tr>
+<tr class="memdesc:af0a80251ccee863073192b2f3e790cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">estrutura de uma lista ligada <br /></td></tr>
+<tr class="separator:af0a80251ccee863073192b2f3e790cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a685efcc552dc86e8d7ab36586c1b90b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a685efcc552dc86e8d7ab36586c1b90b3">newABin</a> (int r, <a class="el" href="structnodo.html">ABin</a> e, <a class="el" href="structnodo.html">ABin</a> d)</td></tr>
+<tr class="memitem:a685efcc552dc86e8d7ab36586c1b90b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a685efcc552dc86e8d7ab36586c1b90b3">newABin</a> (int r, <a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> e, <a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> d)</td></tr>
 <tr class="memdesc:a685efcc552dc86e8d7ab36586c1b90b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada 2 árvores binárias, cria uma nova árvore sendo o valor da nova raíz aquele que foi dado como argumento e cada nodo (esq e dir) uma das árvores dadas como argumento. Não há preocupação nenhuma se a árvore é de procura, apenas é acrescentado uma nova raíz principal. Devolve o apontador (endereço que a nova árvore começa) para a nova árvore.  <a href="#a685efcc552dc86e8d7ab36586c1b90b3">More...</a><br /></td></tr>
 <tr class="separator:a685efcc552dc86e8d7ab36586c1b90b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafb1cc778cb27c480495476296680cc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#aafb1cc778cb27c480495476296680cc0">size</a> (<a class="el" href="structnodo.html">ABin</a> a)</td></tr>
+<tr class="memitem:af3ce8eab2b41f5d539a97be39c585c4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#af3ce8eab2b41f5d539a97be39c585c4f">newlligada</a> (int x, <a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a> l)</td></tr>
+<tr class="memdesc:af3ce8eab2b41f5d539a97be39c585c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma lista ligada dado um elemento e a próxima lista a apontar.  <a href="#af3ce8eab2b41f5d539a97be39c585c4f">More...</a><br /></td></tr>
+<tr class="separator:af3ce8eab2b41f5d539a97be39c585c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb1cc778cb27c480495476296680cc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#aafb1cc778cb27c480495476296680cc0">size</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
 <tr class="memdesc:aafb1cc778cb27c480495476296680cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conta o número de elementos de uma árvore binária (e o devolve).  <a href="#aafb1cc778cb27c480495476296680cc0">More...</a><br /></td></tr>
 <tr class="separator:aafb1cc778cb27c480495476296680cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a967d2e59374dac885f71833430b0cb0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a967d2e59374dac885f71833430b0cb0a">toArray</a> (<a class="el" href="structnodo.html">ABin</a> a, int v[], int N)</td></tr>
+<tr class="memitem:a967d2e59374dac885f71833430b0cb0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a967d2e59374dac885f71833430b0cb0a">toArray</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int v[], int N)</td></tr>
 <tr class="memdesc:a967d2e59374dac885f71833430b0cb0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recebe uma árvore binária de procura, um array (que será formado), a quantidade de elementos N que vamos inserir no array e preenche o array dado no argumento, a partir da árvore binária de procura, com no máximo N elementos. Retorna o número de elementos escritos no array. Escreve o array em ordem crescente, caso a árvore binária dada for de procura.  <a href="#a967d2e59374dac885f71833430b0cb0a">More...</a><br /></td></tr>
 <tr class="separator:a967d2e59374dac885f71833430b0cb0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d8e52261caf3d3907351e8940df4dee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a9d8e52261caf3d3907351e8940df4dee">fromArray</a> (int v[], int N)</td></tr>
+<tr class="memitem:a9d8e52261caf3d3907351e8940df4dee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a9d8e52261caf3d3907351e8940df4dee">fromArray</a> (int v[], int N)</td></tr>
 <tr class="memdesc:a9d8e52261caf3d3907351e8940df4dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Faz uma árvore a partir de um array com N elementos. O elemento que está no meio do array será o que está na raíz. Desse jeito, se o array esttiver ordenado, então, na árvore, todos os elementos que estão a esquerda é menor que a raíz que por conseguinte é menor do que os elementos a direita, por tanto se o array estiver ordenado, a árvore será de procura. Retorna um apontador para a árvore criada. Obs: sempre que eu quiser saber quantos elementos há entre as posições A e B, devo fazer (A - B + 1)  <a href="#a9d8e52261caf3d3907351e8940df4dee">More...</a><br /></td></tr>
 <tr class="separator:a9d8e52261caf3d3907351e8940df4dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77d00c7e06f24d7861f93d1d8f856fcf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a77d00c7e06f24d7861f93d1d8f856fcf">procura_recursiva</a> (int x, <a class="el" href="structnodo.html">ABin</a> a)</td></tr>
+<tr class="memitem:a77d00c7e06f24d7861f93d1d8f856fcf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a77d00c7e06f24d7861f93d1d8f856fcf">procura_recursiva</a> (int x, <a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
 <tr class="memdesc:a77d00c7e06f24d7861f93d1d8f856fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura o elemento "x" na árvore de Procura "a". Devolve 1 se "x" existe na árvore "a".Obs: algorítmo recursivo.  <a href="#a77d00c7e06f24d7861f93d1d8f856fcf">More...</a><br /></td></tr>
 <tr class="separator:a77d00c7e06f24d7861f93d1d8f856fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a173016d1c877f7c558dc883612b60f0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a173016d1c877f7c558dc883612b60f0c">procura_iterativa</a> (int x, <a class="el" href="structnodo.html">ABin</a> a)</td></tr>
+<tr class="memitem:a173016d1c877f7c558dc883612b60f0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a173016d1c877f7c558dc883612b60f0c">procura_iterativa</a> (int x, <a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
 <tr class="memdesc:a173016d1c877f7c558dc883612b60f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procura o elemento "x" na árvore de Procura "a". Devolve 1 se "x" existe na árvore "a".Obs: algorítmo iterativo.  <a href="#a173016d1c877f7c558dc883612b60f0c">More...</a><br /></td></tr>
 <tr class="separator:a173016d1c877f7c558dc883612b60f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55d32e443e8f3650cf0b34a686a056b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a55d32e443e8f3650cf0b34a686a056b3">insere_recursiva</a> (<a class="el" href="structnodo.html">ABin</a> a, int x)</td></tr>
+<tr class="memitem:a55d32e443e8f3650cf0b34a686a056b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a55d32e443e8f3650cf0b34a686a056b3">insere_recursiva</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int x)</td></tr>
 <tr class="memdesc:a55d32e443e8f3650cf0b34a686a056b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura. Devolve uma árvore de procura com os elementos de "a" e "x". Obs: algorítimo recrusivo.  <a href="#a55d32e443e8f3650cf0b34a686a056b3">More...</a><br /></td></tr>
 <tr class="separator:a55d32e443e8f3650cf0b34a686a056b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d75a8959048ab314266d57109455614"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a3d75a8959048ab314266d57109455614">insere_iterativa</a> (<a class="el" href="structnodo.html">ABin</a> a, int x)</td></tr>
+<tr class="memitem:a3d75a8959048ab314266d57109455614"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a3d75a8959048ab314266d57109455614">insere_iterativa</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int x)</td></tr>
 <tr class="memdesc:a3d75a8959048ab314266d57109455614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore binária de procura, acrescenta um elemento, continuando uma árvore de procura. Devolve uma árvore de procura com os elementos de "a" e "x". Obs: algorítimo iterativo.  <a href="#a3d75a8959048ab314266d57109455614">More...</a><br /></td></tr>
 <tr class="separator:a3d75a8959048ab314266d57109455614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a068129cbeed616bd64082e9ab3f1e7f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a068129cbeed616bd64082e9ab3f1e7f8">insere_2</a> (<a class="el" href="structnodo.html">ABin</a> *a, int x)</td></tr>
+<tr class="memitem:a068129cbeed616bd64082e9ab3f1e7f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a068129cbeed616bd64082e9ab3f1e7f8">insere_2</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *a, int x)</td></tr>
 <tr class="memdesc:a068129cbeed616bd64082e9ab3f1e7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dado o endereço do endereço de uma árvore binária de procura e um elemento, insere esse elemento x na árvore dada.  <a href="#a068129cbeed616bd64082e9ab3f1e7f8">More...</a><br /></td></tr>
 <tr class="separator:a068129cbeed616bd64082e9ab3f1e7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fa88a95ac4d4869fef8b89ab7655c8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a9fa88a95ac4d4869fef8b89ab7655c8e">removeRaiz</a> (<a class="el" href="structnodo.html">ABin</a> a)</td></tr>
+<tr class="memitem:a9fa88a95ac4d4869fef8b89ab7655c8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a9fa88a95ac4d4869fef8b89ab7655c8e">removeRaiz</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
 <tr class="memdesc:a9fa88a95ac4d4869fef8b89ab7655c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">recebe uma árvore binária NÃO NULA de PROCURA e retorna essa árvore sem a raíz  <a href="#a9fa88a95ac4d4869fef8b89ab7655c8e">More...</a><br /></td></tr>
 <tr class="separator:a9fa88a95ac4d4869fef8b89ab7655c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b9bd25eed75c69aa380b70bfded535c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a5b9bd25eed75c69aa380b70bfded535c">maiorAB</a> (<a class="el" href="structnodo.html">ABin</a> a)</td></tr>
+<tr class="memitem:a5b9bd25eed75c69aa380b70bfded535c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a5b9bd25eed75c69aa380b70bfded535c">maiorAB</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
 <tr class="memdesc:a5b9bd25eed75c69aa380b70bfded535c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diz qual é o maior elemento de uma árvore binária de procura não nula. Devolve tal elemento.  <a href="#a5b9bd25eed75c69aa380b70bfded535c">More...</a><br /></td></tr>
 <tr class="separator:a5b9bd25eed75c69aa380b70bfded535c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57417de8f171b8a29896f9d75cd75968"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a57417de8f171b8a29896f9d75cd75968">removeMaior_1</a> (<a class="el" href="structnodo.html">ABin</a> a)</td></tr>
+<tr class="memitem:a57417de8f171b8a29896f9d75cd75968"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a57417de8f171b8a29896f9d75cd75968">removeMaior_1</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
 <tr class="memdesc:a57417de8f171b8a29896f9d75cd75968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna a árvore sem o maior elemento . Recebe uma árvore de Procura NÃO NULA.  <a href="#a57417de8f171b8a29896f9d75cd75968">More...</a><br /></td></tr>
 <tr class="separator:a57417de8f171b8a29896f9d75cd75968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a768e672fda20afeade4c5dcb64800e63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnodo.html">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a768e672fda20afeade4c5dcb64800e63">removeMaior_2</a> (<a class="el" href="structnodo.html">ABin</a> *sitio)</td></tr>
+<tr class="memitem:a768e672fda20afeade4c5dcb64800e63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a768e672fda20afeade4c5dcb64800e63">removeMaior_2</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *sitio)</td></tr>
 <tr class="memdesc:a768e672fda20afeade4c5dcb64800e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retira o maior elemento de uma árvore binária de procura e reajusta ela com as devidas modificações. Retorna o nodo no qual está o maior elemento. Servepara árvores binárias de Procura NÃO NULA. Obs: recebe o endereço do endereço de uma árvore binária de procura. Isto porque iremos devolver algo que não é a árvore e vamos querer modificar ela também, então passa-se o pointer do ABin para fazer 2 em 1 (diferente da função anterior que até modificava a árvore, mas devolvia ela mesma.  <a href="#a768e672fda20afeade4c5dcb64800e63">More...</a><br /></td></tr>
 <tr class="separator:a768e672fda20afeade4c5dcb64800e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd9d3a5240cc8f0eea07fff3ad5339f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a0fd9d3a5240cc8f0eea07fff3ad5339f">pruneAB</a> (<a class="el" href="structnodo.html">ABin</a> *a, int profundidade)</td></tr>
+<tr class="memitem:a0fd9d3a5240cc8f0eea07fff3ad5339f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a0fd9d3a5240cc8f0eea07fff3ad5339f">pruneAB</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *a, int profundidade)</td></tr>
 <tr class="memdesc:a0fd9d3a5240cc8f0eea07fff3ad5339f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta todos os nodos com profundidade superior a profundidade dada. Retorna o número de elementos tirados.  <a href="#a0fd9d3a5240cc8f0eea07fff3ad5339f">More...</a><br /></td></tr>
 <tr class="separator:a0fd9d3a5240cc8f0eea07fff3ad5339f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09f2e5225228c5bf0622932e0f908cd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a09f2e5225228c5bf0622932e0f908cd7">nivelV</a> (<a class="el" href="structnodo.html">ABin</a> a, int n, int v[])</td></tr>
+<tr class="memitem:a09f2e5225228c5bf0622932e0f908cd7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a09f2e5225228c5bf0622932e0f908cd7">nivelV</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int n, int v[])</td></tr>
 <tr class="memdesc:a09f2e5225228c5bf0622932e0f908cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preenche o vector v com os elementos de a que se encontram no nível (profundidade) n. Considere que a raíz da árvore se encontra no nível 1. A função deverá retornar o número de posições preenchidas do array.  <a href="#a09f2e5225228c5bf0622932e0f908cd7">More...</a><br /></td></tr>
 <tr class="separator:a09f2e5225228c5bf0622932e0f908cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab19c649e5ba84a24f842876e0f0d4c7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#ab19c649e5ba84a24f842876e0f0d4c7c">quantosMaiores</a> (<a class="el" href="structnodo.html">ABin</a> a, int x)</td></tr>
+<tr class="memitem:ab19c649e5ba84a24f842876e0f0d4c7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#ab19c649e5ba84a24f842876e0f0d4c7c">quantosMaiores</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int x)</td></tr>
 <tr class="memdesc:ab19c649e5ba84a24f842876e0f0d4c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore binária de procura de inteiros e um inteiro, conta quantos elementos da árvore são maiores que o inteiro dado. Devolve o número de elementos contado.  <a href="#ab19c649e5ba84a24f842876e0f0d4c7c">More...</a><br /></td></tr>
 <tr class="separator:ab19c649e5ba84a24f842876e0f0d4c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bef7e38a5aa497f7a56bdfd44a82fce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a2bef7e38a5aa497f7a56bdfd44a82fce">maior_elemento</a> (<a class="el" href="structnodo.html">ABin</a> a, int x)</td></tr>
+<tr class="memitem:a2bef7e38a5aa497f7a56bdfd44a82fce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a2bef7e38a5aa497f7a56bdfd44a82fce">maior_elemento</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int x)</td></tr>
 <tr class="memdesc:a2bef7e38a5aa497f7a56bdfd44a82fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore a (não necessariamente de procura) avalia se o inteiro x dado no argumento é maior que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário.  <a href="#a2bef7e38a5aa497f7a56bdfd44a82fce">More...</a><br /></td></tr>
 <tr class="separator:a2bef7e38a5aa497f7a56bdfd44a82fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac08e907b9798aca1e0b2c3f9024dd380"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#ac08e907b9798aca1e0b2c3f9024dd380">menor_elemento</a> (<a class="el" href="structnodo.html">ABin</a> a, int x)</td></tr>
+<tr class="memitem:ac08e907b9798aca1e0b2c3f9024dd380"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#ac08e907b9798aca1e0b2c3f9024dd380">menor_elemento</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int x)</td></tr>
 <tr class="memdesc:ac08e907b9798aca1e0b2c3f9024dd380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore a (não necessáriamente de procura) avalia se o inteiro x dado no argumento é menor que todos os elementos da árvore. Devolve 1 caso for, zero caso contrário.  <a href="#ac08e907b9798aca1e0b2c3f9024dd380">More...</a><br /></td></tr>
 <tr class="separator:ac08e907b9798aca1e0b2c3f9024dd380"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a177b95a5da9e02b3b0e701fdf64a72b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a177b95a5da9e02b3b0e701fdf64a72b6">deProcura</a> (<a class="el" href="structnodo.html">ABin</a> a)</td></tr>
+<tr class="memitem:a177b95a5da9e02b3b0e701fdf64a72b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a177b95a5da9e02b3b0e701fdf64a72b6">deProcura</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
 <tr class="memdesc:a177b95a5da9e02b3b0e701fdf64a72b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Testa se uma árvore é de procura (isto é, se dado um nodo, todos os elementos na sub-árvore da esquerda são menores que a raíz enquanto todos os elementos da sub-árvore direita são maiores que a raíz.  <a href="#a177b95a5da9e02b3b0e701fdf64a72b6">More...</a><br /></td></tr>
 <tr class="separator:a177b95a5da9e02b3b0e701fdf64a72b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7564ec4e83d9e96088c7fdaa4b54b33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#ae7564ec4e83d9e96088c7fdaa4b54b33">depthOrd</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int x)</td></tr>
+<tr class="memdesc:ae7564ec4e83d9e96088c7fdaa4b54b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o nível (profundidade) a que um elemento está numa arvore binária de procura. Devolve -1 caso não existir. Obs: considere-se a ráiz nível 1.  <a href="#ae7564ec4e83d9e96088c7fdaa4b54b33">More...</a><br /></td></tr>
+<tr class="separator:ae7564ec4e83d9e96088c7fdaa4b54b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e60900d6db10b253027e56baee2c2af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a5e60900d6db10b253027e56baee2c2af">contaFolhas</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
+<tr class="memdesc:a5e60900d6db10b253027e56baee2c2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore binária de inteiros (não necessariamente nula), conta quantos dos seus nodos são folhas, i.e., que não têm nenhum descendente. Devolve o número de folhas.  <a href="#a5e60900d6db10b253027e56baee2c2af">More...</a><br /></td></tr>
+<tr class="separator:a5e60900d6db10b253027e56baee2c2af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79925ce236df192e4e38c4447d221644"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a79925ce236df192e4e38c4447d221644">cloneMirror</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
+<tr class="memdesc:a79925ce236df192e4e38c4447d221644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma árvore nova, com o resultado de inverter a árvore dada no argumento (efeito espelho) Devolve a árvore criada.  <a href="#a79925ce236df192e4e38c4447d221644">More...</a><br /></td></tr>
+<tr class="separator:a79925ce236df192e4e38c4447d221644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4134539699799bbd09118489675ca096"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a4134539699799bbd09118489675ca096">somasAcA</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
+<tr class="memdesc:a4134539699799bbd09118489675ca096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore de inteiros, calcula a árvore das somas acumuladas dessa árvore. A árvore calculada deve ter a mesma forma da árvore recebida como argumento e em cada nodo deve conter a soma dos elementos da sub-árvore que aí se inicia. Devolve a sub-árvore criada.  <a href="#a4134539699799bbd09118489675ca096">More...</a><br /></td></tr>
+<tr class="separator:a4134539699799bbd09118489675ca096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49752ab32d19d1edd993604ccfc98389"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a49752ab32d19d1edd993604ccfc98389">somaElementos</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
+<tr class="memdesc:a49752ab32d19d1edd993604ccfc98389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma árvore, não necessariamente de procura, retorna a soma de todos os seus elementos.  <a href="#a49752ab32d19d1edd993604ccfc98389">More...</a><br /></td></tr>
+<tr class="separator:a49752ab32d19d1edd993604ccfc98389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc28c92ee8281e42fd13073a25eebf96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#acc28c92ee8281e42fd13073a25eebf96">nivelL</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int n)</td></tr>
+<tr class="memdesc:acc28c92ee8281e42fd13073a25eebf96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma ́arvore binária (não necessariamente de procura), constrói uma lista com os valores dos elementos que estão armazenados na árvore ao nível n (assuma que a raiz da árvore está ao nível 1).  <a href="#acc28c92ee8281e42fd13073a25eebf96">More...</a><br /></td></tr>
+<tr class="separator:acc28c92ee8281e42fd13073a25eebf96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbbdb441117c8aff084aeecf95ac3747"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#abbbdb441117c8aff084aeecf95ac3747">concatLligadas</a> (<a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a> l1, <a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a> l2)</td></tr>
+<tr class="memdesc:abbbdb441117c8aff084aeecf95ac3747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dada uma lista l1 e uma l2, junta l2 no fim de l1. Devolve l2 apenas quando l1 for nula.  <a href="#abbbdb441117c8aff084aeecf95ac3747">More...</a><br /></td></tr>
+<tr class="separator:abbbdb441117c8aff084aeecf95ac3747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a734ccdadae3fcc0614d07d0f75534e53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a734ccdadae3fcc0614d07d0f75534e53">freeAB</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
+<tr class="memdesc:a734ccdadae3fcc0614d07d0f75534e53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liberta o espaço ocupado por uma arvore binária, retornando o número de nodos libertados.  <a href="#a734ccdadae3fcc0614d07d0f75534e53">More...</a><br /></td></tr>
+<tr class="separator:a734ccdadae3fcc0614d07d0f75534e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6a0e0faecc88d43e626046d874b8ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#aeb6a0e0faecc88d43e626046d874b8ab">depth</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a, int x)</td></tr>
+<tr class="memdesc:aeb6a0e0faecc88d43e626046d874b8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o nível-profundidade- (menor) a que um elemento está numa arvore binária, não necessariamente de procura (-1 caso não exista). Considere a raíz o nível 1 da árvore.  <a href="#aeb6a0e0faecc88d43e626046d874b8ab">More...</a><br /></td></tr>
+<tr class="separator:aeb6a0e0faecc88d43e626046d874b8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e409ae300ae1c2c1f1f185e8300665c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a5e409ae300ae1c2c1f1f185e8300665c">mirror</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *a)</td></tr>
+<tr class="memdesc:a5e409ae300ae1c2c1f1f185e8300665c"><td class="mdescLeft">&#160;</td><td class="mdescRight">que inverte uma árvore (sem criar uma nova ́arvore).  <a href="#a5e409ae300ae1c2c1f1f185e8300665c">More...</a><br /></td></tr>
+<tr class="separator:a5e409ae300ae1c2c1f1f185e8300665c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0465eab4b078d5bfb77801516199ae6d"><td class="memItemLeft" align="right" valign="top"><a id="a0465eab4b078d5bfb77801516199ae6d"></a>
+<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a0465eab4b078d5bfb77801516199ae6d">cloneAB</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
+<tr class="memdesc:a0465eab4b078d5bfb77801516199ae6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma cópia de uma ́arvore.  a árvore binária a ser copiada. <br /></td></tr>
+<tr class="separator:a0465eab4b078d5bfb77801516199ae6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b37af29f7e1f7af1bf3fda55637cd3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Btree__functions_8h.html#a1b37af29f7e1f7af1bf3fda55637cd3e">altura</a> (<a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> a)</td></tr>
+<tr class="memdesc:a1b37af29f7e1f7af1bf3fda55637cd3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula a altura de uma ́arvore binária. Distância da raíz até o nodo mais fundo.  <a href="#a1b37af29f7e1f7af1bf3fda55637cd3e">More...</a><br /></td></tr>
+<tr class="separator:a1b37af29f7e1f7af1bf3fda55637cd3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Funções de manuseamento de árvores binárias (algumas de procura) </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a1b37af29f7e1f7af1bf3fda55637cd3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b37af29f7e1f7af1bf3fda55637cd3e">&#9670;&nbsp;</a></span>altura()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int altura </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula a altura de uma ́arvore binária. Distância da raíz até o nodo mais fundo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore binária </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a79925ce236df192e4e38c4447d221644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79925ce236df192e4e38c4447d221644">&#9670;&nbsp;</a></span>cloneMirror()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> cloneMirror </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria uma árvore nova, com o resultado de inverter a árvore dada no argumento (efeito espelho) Devolve a árvore criada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore a inverter (não necessariamente de procura) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abbbdb441117c8aff084aeecf95ac3747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbdb441117c8aff084aeecf95ac3747">&#9670;&nbsp;</a></span>concatLligadas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a> concatLligadas </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a>&#160;</td>
+          <td class="paramname"><em>l1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a>&#160;</td>
+          <td class="paramname"><em>l2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dada uma lista l1 e uma l2, junta l2 no fim de l1. Devolve l2 apenas quando l1 for nula. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l1</td><td>lista ligada </td></tr>
+    <tr><td class="paramname">l2</td><td>lista ligada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5e60900d6db10b253027e56baee2c2af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e60900d6db10b253027e56baee2c2af">&#9670;&nbsp;</a></span>contaFolhas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int contaFolhas </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dada uma árvore binária de inteiros (não necessariamente nula), conta quantos dos seus nodos são folhas, i.e., que não têm nenhum descendente. Devolve o número de folhas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore binária não necessariamente de procura </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a177b95a5da9e02b3b0e701fdf64a72b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a177b95a5da9e02b3b0e701fdf64a72b6">&#9670;&nbsp;</a></span>deProcura()</h2>
 
@@ -154,7 +316,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int deProcura </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -171,6 +333,106 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aeb6a0e0faecc88d43e626046d874b8ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb6a0e0faecc88d43e626046d874b8ab">&#9670;&nbsp;</a></span>depth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int depth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula o nível-profundidade- (menor) a que um elemento está numa arvore binária, não necessariamente de procura (-1 caso não exista). Considere a raíz o nível 1 da árvore. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore binária </td></tr>
+    <tr><td class="paramname">elemento</td><td>que vamos ver o menor nível </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae7564ec4e83d9e96088c7fdaa4b54b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7564ec4e83d9e96088c7fdaa4b54b33">&#9670;&nbsp;</a></span>depthOrd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int depthOrd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula o nível (profundidade) a que um elemento está numa arvore binária de procura. Devolve -1 caso não existir. Obs: considere-se a ráiz nível 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore binária de procura </td></tr>
+    <tr><td class="paramname">x</td><td>elementos que vamos ver o nível </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a734ccdadae3fcc0614d07d0f75534e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a734ccdadae3fcc0614d07d0f75534e53">&#9670;&nbsp;</a></span>freeAB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int freeAB </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liberta o espaço ocupado por uma arvore binária, retornando o número de nodos libertados. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore binária não necessariamente de procura </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a9d8e52261caf3d3907351e8940df4dee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d8e52261caf3d3907351e8940df4dee">&#9670;&nbsp;</a></span>fromArray()</h2>
 
@@ -178,7 +440,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnodo.html">ABin</a> fromArray </td>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> fromArray </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>v</em>[], </td>
@@ -217,7 +479,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void insere_2 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -252,9 +514,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnodo.html">ABin</a> insere_iterativa </td>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> insere_iterativa </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -289,9 +551,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnodo.html">ABin</a> insere_recursiva </td>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> insere_recursiva </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -328,7 +590,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int maior_elemento </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -365,7 +627,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int maiorAB </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -391,7 +653,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int menor_elemento </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -418,6 +680,32 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5e409ae300ae1c2c1f1f185e8300665c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e409ae300ae1c2c1f1f185e8300665c">&#9670;&nbsp;</a></span>mirror()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mirror </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>que inverte uma árvore (sem criar uma nova ́arvore). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>pointer para ABin </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a685efcc552dc86e8d7ab36586c1b90b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a685efcc552dc86e8d7ab36586c1b90b3">&#9670;&nbsp;</a></span>newABin()</h2>
 
@@ -425,7 +713,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnodo.html">ABin</a> newABin </td>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> newABin </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>r</em>, </td>
@@ -433,13 +721,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>e</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>d</em>&#160;</td>
         </tr>
         <tr>
@@ -462,6 +750,80 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af3ce8eab2b41f5d539a97be39c585c4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ce8eab2b41f5d539a97be39c585c4f">&#9670;&nbsp;</a></span>newlligada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a> newlligada </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a>&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria uma lista ligada dado um elemento e a próxima lista a apontar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>elemento a inserir </td></tr>
+    <tr><td class="paramname">l</td><td>próxima lista a apontar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acc28c92ee8281e42fd13073a25eebf96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc28c92ee8281e42fd13073a25eebf96">&#9670;&nbsp;</a></span>nivelL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#af0a80251ccee863073192b2f3e790cdc">LInt</a> nivelL </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dada uma ́arvore binária (não necessariamente de procura), constrói uma lista com os valores dos elementos que estão armazenados na árvore ao nível n (assuma que a raiz da árvore está ao nível 1). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore binária </td></tr>
+    <tr><td class="paramname">n</td><td>nível </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a09f2e5225228c5bf0622932e0f908cd7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09f2e5225228c5bf0622932e0f908cd7">&#9670;&nbsp;</a></span>nivelV()</h2>
 
@@ -471,7 +833,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int nivelV </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -521,7 +883,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>&#160;</td>
         </tr>
         <tr>
@@ -558,7 +920,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>&#160;</td>
         </tr>
         <tr>
@@ -589,7 +951,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int pruneAB </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -626,7 +988,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int quantosMaiores </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
@@ -661,9 +1023,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnodo.html">ABin</a> removeMaior_1 </td>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> removeMaior_1 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -687,9 +1049,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnodo.html">ABin</a> removeMaior_2 </td>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> removeMaior_2 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> *&#160;</td>
           <td class="paramname"><em>sitio</em></td><td>)</td>
           <td></td>
         </tr>
@@ -713,9 +1075,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structnodo.html">ABin</a> removeRaiz </td>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> removeRaiz </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -741,7 +1103,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int size </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -758,6 +1120,58 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a49752ab32d19d1edd993604ccfc98389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49752ab32d19d1edd993604ccfc98389">&#9670;&nbsp;</a></span>somaElementos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int somaElementos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dada uma árvore, não necessariamente de procura, retorna a soma de todos os seus elementos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore binária </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4134539699799bbd09118489675ca096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4134539699799bbd09118489675ca096">&#9670;&nbsp;</a></span>somasAcA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a> somasAcA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dada uma árvore de inteiros, calcula a árvore das somas acumuladas dessa árvore. A árvore calculada deve ter a mesma forma da árvore recebida como argumento e em cada nodo deve conter a soma dos elementos da sub-árvore que aí se inicia. Devolve a sub-árvore criada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>árvore (não necessariamente de procura) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a967d2e59374dac885f71833430b0cb0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a967d2e59374dac885f71833430b0cb0a">&#9670;&nbsp;</a></span>toArray()</h2>
 
@@ -767,7 +1181,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int toArray </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnodo.html">ABin</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Btree__functions_8h.html#a403840f19716a992bb23f8d4f08c5122">ABin</a>&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dlista',['dlista',['../structdlista.html',1,'']]]
+  ['lligada',['lligada',['../structlligada.html',1,'']]]
 ];

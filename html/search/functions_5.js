@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['procura_5fiterativa',['procura_iterativa',['../Btree__functions_8h.html#a173016d1c877f7c558dc883612b60f0c',1,'Btree_functions.c']]],
-  ['procura_5frecursiva',['procura_recursiva',['../Btree__functions_8h.html#a77d00c7e06f24d7861f93d1d8f856fcf',1,'Btree_functions.c']]],
-  ['pruneab',['pruneAB',['../Btree__functions_8h.html#a0fd9d3a5240cc8f0eea07fff3ad5339f',1,'Btree_functions.c']]]
+  ['maior_5felemento',['maior_elemento',['../Btree__functions_8h.html#a2bef7e38a5aa497f7a56bdfd44a82fce',1,'Btree_functions.c']]],
+  ['maiorab',['maiorAB',['../Btree__functions_8h.html#a5b9bd25eed75c69aa380b70bfded535c',1,'Btree_functions.h']]],
+  ['menor_5felemento',['menor_elemento',['../Btree__functions_8h.html#ac08e907b9798aca1e0b2c3f9024dd380',1,'Btree_functions.c']]],
+  ['mirror',['mirror',['../Btree__functions_8h.html#a5e409ae300ae1c2c1f1f185e8300665c',1,'Btree_functions.c']]]
 ];

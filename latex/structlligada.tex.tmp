@@ -1,0 +1,32 @@
+\hypertarget{structlligada}{}\section{lligada Struct Reference}
+\label{structlligada}\index{lligada@{lligada}}
+
+
+estrutura de uma lista ligada  
+
+
+
+
+{\ttfamily \#include $<$Btree\+\_\+functions.\+h$>$}
+
+
+
+Collaboration diagram for lligada\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structlligada_af5cbc38b64d35e14a799fac999f86a27}\label{structlligada_af5cbc38b64d35e14a799fac999f86a27}} 
+int {\bfseries valor}
+\item 
+\mbox{\Hypertarget{structlligada_ae620cb307892f22905d79e0d5013f9e3}\label{structlligada_ae620cb307892f22905d79e0d5013f9e3}} 
+struct \hyperlink{structlligada}{lligada} $\ast$ {\bfseries prox}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+estrutura de uma lista ligada 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Btree__functions_8h}{Btree\+\_\+functions.\+h}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size',['size',['../Btree__functions_8h.html#aafb1cc778cb27c480495476296680cc0',1,'Btree_functions.c']]]
+  ['quantosmaiores',['quantosMaiores',['../Btree__functions_8h.html#ab19c649e5ba84a24f842876e0f0d4c7c',1,'Btree_functions.c']]]
 ];

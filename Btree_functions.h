@@ -263,10 +263,46 @@ LInt nivelL (ABin a, int n);
 
 LInt concatLligadas (LInt l1, LInt l2);
 
-// PERGUNTAR SOBRE ÁRVORES DE PROCURA TEREM ELEMENTOS IGUAIS (OU QUALQUER OUTRRA ÁRVORE)
+/** 
+\brief Liberta o espaço ocupado por uma arvore binária, retornando o número de nodos libertados.
+@param a árvore binária não necessariamente de procura
+*/
+
+int freeAB (ABin a);
+
+/**
+\brief Calcula o nível-profundidade- (menor) a que um elemento está numa arvore binária, não necessariamente de procura (-1 caso não exista). 
+Considere a raíz o nível 1 da árvore
+@param a árvore binária
+@param elemento que vamos ver o menor nível
+*/
+
+int depth (ABin a, int x);
+
+/**
+\brief que inverte uma árvore  (sem  criar  uma  nova ́arvore).
+@param a pointer para ABin
+*/
+
+void mirror (ABin * a);
+
+/**
+\brief Cria uma cópia de uma ́arvore. 
+@para a árvore binária a ser copiada
+*/
+
+ABin cloneAB (ABin a );
+
+/** 
+\brief Calcula a altura de uma ́arvore binária. Distância da raíz até o nodo mais fundo.
+@param a árvore binária
+*/
+
+int altura (ABin a);
 
 /* em projeto
 ABin removeRaiz (ABin a);
 */
+
 
 #endif

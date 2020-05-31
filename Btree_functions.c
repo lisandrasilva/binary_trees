@@ -506,7 +506,102 @@ else if (n == 1)
 return lista;
 }
 
+int freeAB (ABin a)
+{
+int res = 0;
+ABin tmp;
 
+if (!a)
+	return 0;
+else
+	{
+	res = 1 + freeAB(a->esq) + freeAB(a->dir);
+	free (a);
+	}
+return res;
+}
+
+
+int depth (ABin a, int x)
+{
+int nivelEsq,nivelDir = 0;
+
+if (!a) 
+	 return -1;
+else if (a->valor == x)
+			return 1;
+	 else
+	 	 {
+			if (depth (a->esq,x) == -1)
+				nivelEsq = -1;
+			else
+				nivelEsq = 1 + depth (a->esq,x);
+
+			if (depth (a->dir,x) == -1)
+				nivelDir = -1; 
+			else
+				nivelDir = 1 + depth (a->dir,x);			
+		 }
+
+if (nivelDir == -1 && nivelEsq == -1) // situação que não há o elemento
+	return -1;
+else if ((nivelEsq <= nivelDir) // Situação que há o elemento nas 2 sub-árvores e vamos escolher o de menor profundidade
+    	  && (nivelEsq != -1) 
+		  && (nivelDir != -1))
+			   return nivelEsq;
+	 else if ((nivelEsq > nivelDir) // Situação que há o elemento nas 2 sub-árvores e vamos escolher o de menor profundidade
+    	  && (nivelEsq != -1) 
+		  && (nivelDir != -1))
+			   return nivelDir;
+		  else if (nivelEsq == -1)  // Situações em que não há o elemento em uma sub-árvore
+		  		return nivelDir;
+				else return nivelEsq;
+}
+
+void mirror (ABin *a)
+{
+ABin b;
+if (*a)
+	{
+		b = (*a)->esq;
+		(*a)->esq = (*a)->dir;
+		(*a)->dir = b;
+		mirror (&(*a)->esq);
+		mirror (&(*a)->dir);
+	}
+}
+
+ABin cloneAB (ABin a )
+{
+ABin b;
+
+if (!a)
+	return NULL;
+else
+	{
+	b = newABin (a->valor,NULL,NULL);
+	b->esq = cloneAB (a->esq);
+	b->dir = cloneAB (a->dir);
+	}
+return b;
+}
+
+int altura (ABin a)
+{
+int tamanhoEsq,tamanhoDir;
+
+if (!a) 
+		return 0;
+else { 
+	    tamanhoEsq = tamanhoDir = 1;
+        tamanhoEsq += altura (a->esq);
+        tamanhoDir += altura (a->dir);
+
+		if (tamanhoDir > tamanhoEsq)
+			return tamanhoDir;
+			else return tamanhoEsq;
+	 }
+}
 
 
 

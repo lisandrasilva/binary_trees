@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['procura_5fiterativa',['procura_iterativa',['../Btree__functions_8h.html#a173016d1c877f7c558dc883612b60f0c',1,'Btree_functions.c']]],
-  ['procura_5frecursiva',['procura_recursiva',['../Btree__functions_8h.html#a77d00c7e06f24d7861f93d1d8f856fcf',1,'Btree_functions.c']]],
-  ['pruneab',['pruneAB',['../Btree__functions_8h.html#a0fd9d3a5240cc8f0eea07fff3ad5339f',1,'Btree_functions.c']]]
+  ['newabin',['newABin',['../Btree__functions_8h.html#a685efcc552dc86e8d7ab36586c1b90b3',1,'Btree_functions.c']]],
+  ['newlligada',['newlligada',['../Btree__functions_8h.html#af3ce8eab2b41f5d539a97be39c585c4f',1,'Btree_functions.c']]],
+  ['nivell',['nivelL',['../Btree__functions_8h.html#acc28c92ee8281e42fd13073a25eebf96',1,'Btree_functions.c']]],
+  ['nivelv',['nivelV',['../Btree__functions_8h.html#a09f2e5225228c5bf0622932e0f908cd7',1,'Btree_functions.c']]],
+  ['nodo',['nodo',['../structnodo.html',1,'']]]
 ];
