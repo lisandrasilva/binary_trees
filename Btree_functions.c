@@ -197,9 +197,16 @@ if (a->esq == NULL)
 	      {
 	       tmp = a;
 	       a = a->esq;
-	       free (tmp);
+	       free (a);
+	       a = tmp;
 	      }
-             else;   // Ambas as sub-árvores são NÃO NULAS
+             else
+	     {
+		tmp = removeMaior_2(&(a->esq));
+		tmp->dir = a->dir;
+		tmp->esq = a->esq;
+	        a = tmp;	
+	     }   // Ambas as sub-árvores são NÃO NULAS
              /* Uma das formas de fazer é colocar toda a sub-árvora da esquerda pendurada no lado esquerdo do menor nodo da direita 
 			 (mais a esquerda possível)- ou o contrário, colocar toda a sub-árvore direita pendurada do lado direito do maior nodo da 
 			 direita (mais a direita possível). Ora, essas soluções não seriam muito boas porque a árvore ficaria demasiada profunda*/
@@ -210,6 +217,26 @@ if (a->esq == NULL)
 	    	 
 return a;
 }
+
+/* Remove um elemento de uma árvore binária de procura*/
+// Devolve 0 se removeu, 1 caso x não existe
+int removeA (ABin * a, int x)
+{
+int r = 0;
+
+while ((*a) && ((*a)->valor != x))
+	{
+	if ((*a)->valor > x)
+		a = &((*a)->esq);
+	else a = &((*a)->dir);
+	}
+if (!(*a)) r = 1;
+else (*a) = removeRaiz(*a);
+
+return r;
+
+}
+
 
 int maiorAB_Deprocura (ABin a)
 {

@@ -300,9 +300,21 @@ ABin cloneAB (ABin a );
 
 int altura (ABin a);
 
-/* em projeto
-ABin removeRaiz (ABin a);
+/**
+\brief Remove a raíz de uma árvore binária de procura, mantendo ela de procura.
+Devolve a árvore sem a raíz.
+@param a árvore binária de procura
 */
+
+ABin removeRaiz (ABin a);
+
+/**
+\brief Remove um elemento de uma árvore binária de procura. Mantendo ela de procura. Devolve 0 caso conseguiu remover, 1 caso o elemento não existe.
+@param a endereço de um ABin
+@param elemento a ser removido
+*/
+
+int removeA (ABin *a, int x);
 
 
 #endif
