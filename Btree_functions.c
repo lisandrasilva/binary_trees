@@ -359,39 +359,35 @@ free (*a);
 return elem_removidos;
 }
 
+
 int nivelV (ABin a, int n, int v[])
 {
-	int res = 0;
+  int res = 0;
 
-	if (!n || !a) return res;
-
-	else if (n == 1 && a)
-	     {
-			 v[res] = a->valor;
-			 res++;
-		 }
-		 else if (a)
-		 	  {
-				  res = nivelV ( a->esq, n - 1, v);
-				  res += nivelV ( a->dir, n - 1, v + res);
-			  }
-	return res;
+  if (n == 1 && a){
+    v[res] = a->valor;
+    res++;
+  }
+  else if (n >= 1 && a){
+          res =  nivelV ( a->esq, n - 1, v);
+          res += nivelV ( a->dir, n - 1, v + res);
+        }
+  return res;
 }
 
-int quantosMaiores (ABin a, int x)
-{
-int res = 0;
+int quantosMaiores (ABin a, int x){
+  int res = 0;
 
-if (!a) return res;
- 	else if (a->valor < x || a->valor == x)
-		res = quantosMaiores (a->dir, x);
-		else if (a->valor > x)
-			{
-			res++;
-			res += quantosMaiores (a->esq, x);
-			res += quantosMaiores (a->dir, x);
-			}
-return res;
+  if (a != NULL){
+      if (a->valor <= x)
+          res = quantosMaiores (a->dir, x);
+      if (a->valor > x){
+	  res++;
+	  res += quantosMaiores (a->esq, x);
+	  res += quantosMaiores (a->dir, x);
+      }
+  }
+  return res;
 }
 
 int deProcura (ABin a)
@@ -450,20 +446,16 @@ else
 return numFolhas;
 }
 
-ABin cloneMirror (ABin a)
-{
-ABin arvB;
+ABin cloneMirror (ABin a){
+    ABin arvB = NULL;
 
-if (!a)
-	return (arvB = NULL);
-else 
-	{// Inverter sub-árvores;
-	arvB = newABin (a->valor,NULL,NULL);
-	arvB->dir = cloneMirror (a->esq);
-	arvB->esq = cloneMirror (a->dir);
-	}
+     if (a !=NULL) { // Inverter sub-árvores;
+         arvB = newABin (a->valor,NULL,NULL);
+         arvB->dir = cloneMirror (a->esq);
+         arvB->esq = cloneMirror (a->dir);
+    }
 
-return arvB;
+    return arvB;
 }
 
 int somaElementos (ABin a)
